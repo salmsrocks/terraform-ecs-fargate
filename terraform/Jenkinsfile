@@ -15,7 +15,7 @@ try {
                     def tfHome = tool name: 'Terraform'
                     env.PATH = "${tfHome}:${env.PATH}"
                 }
-                sh 'terraform --version'
+                bat 'terraform --version'
                
    } 
            
@@ -32,7 +32,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform init'
+          bat 'terraform init'
         }
       }
     }
@@ -48,7 +48,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform plan'
+          bat 'terraform plan'
         }
       }
     }
